@@ -31,6 +31,14 @@ class ChooseCommandTest extends TestCase
             {
                 return $this->searchableCommandNames($commands, $query);
             }
+
+            /**
+             * @param  \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
+             */
+            public function infoFor(Collection $commands, ?string $name): ?string
+            {
+                return $name === null ? null : $this->commandInfo($commands, $name);
+            }
         };
 
         $commands = collect([
@@ -58,6 +66,8 @@ class ChooseCommandTest extends TestCase
             ['demo:greet', 'demo:hello', 'demo:sync'],
             $command->searchableNames($commands, '')
         );
+
+        $this->assertNull($command->infoFor($commands, null));
     }
 
     public function test_it_can_pass_raw_arguments_and_options_to_the_selected_command(): void

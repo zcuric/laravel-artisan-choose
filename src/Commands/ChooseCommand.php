@@ -38,9 +38,9 @@ class ChooseCommand extends Command
         $selectedCommand = search(
             label: 'Choose an Artisan command',
             placeholder: 'Type to filter commands...',
-            options: fn (string $value): array => $this->searchableCommandNames($commands, $value),
+            options: fn (?string $value): array => $this->searchableCommandNames($commands, $value ?? ''),
             scroll: min(12, max(1, $commands->count())),
-            info: fn (string $value): ?string => $this->commandInfo($commands, $value),
+            info: fn (?string $value): ?string => $value === null ? null : $this->commandInfo($commands, $value),
             hint: 'Press enter on an empty search box to browse the full list.',
         );
 
