@@ -1,5 +1,5 @@
 {
-    "name": "zdravko/laravel-artisan-choose",
+    "name": "zcuric/laravel-artisan-choose",
     "description": "Searchable Artisan command chooser inspired by just --choose.",
     "type": "library",
     "license": "MIT",
