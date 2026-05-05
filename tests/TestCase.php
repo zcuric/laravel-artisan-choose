@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace CastelCode\LaravelArtisanChoose\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use CastelCode\LaravelArtisanChoose\ArtisanChooseServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {

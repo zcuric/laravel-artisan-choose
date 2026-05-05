@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace CastelCode\LaravelArtisanChoose;
 
-use Illuminate\Support\ServiceProvider;
 use CastelCode\LaravelArtisanChoose\Commands\ChooseCommand;
+use Illuminate\Support\ServiceProvider;
 
 class ArtisanChooseServiceProvider extends ServiceProvider
 {

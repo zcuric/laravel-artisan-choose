@@ -75,7 +75,7 @@ class ChooseCommand extends Command
     }
 
     /**
-     * @return \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>
+     * @return Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>
      */
     protected function availableCommands(): Collection
     {
@@ -94,7 +94,7 @@ class ChooseCommand extends Command
     }
 
     /**
-     * @param  \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
+     * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
      * @return array<int, string>
      */
     protected function searchableCommandNames(Collection $commands, string $query): array
@@ -128,7 +128,7 @@ class ChooseCommand extends Command
     }
 
     /**
-     * @param  \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
+     * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
      */
     protected function commandInfo(Collection $commands, string $name): ?string
     {

@@ -290,8 +290,6 @@ class CommandInputPrompter
         return ['include' => true, 'value' => $values];
     }
 
-    /**
-     */
     protected function buildHint(string $description, array $extra = []): string
     {
         $parts = array_values(array_filter([

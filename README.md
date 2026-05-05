@@ -97,8 +97,35 @@ Admin/UserController --resource
 ## Testing
 
 ```bash
+composer lint
 composer test
 ```
+
+To apply Pint formatting locally:
+
+```bash
+composer format
+```
+
+## CI
+
+GitHub Actions runs:
+
+- `composer validate`
+- `composer lint`
+- `composer test`
+- compatibility test runs for Laravel 10, 11, 12, and 13
+
+## Packagist Sync
+
+Prefer enabling the Packagist GitHub integration so releases sync automatically.
+
+If you need the manual GitHub webhook instead, configure:
+
+- **Payload URL:** `https://packagist.org/api/github?username=zcuric`
+- **Content Type:** `application/json`
+- **Secret:** your Packagist API token
+- **Events:** push
 
 ## License
 

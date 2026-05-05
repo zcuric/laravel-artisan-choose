@@ -24,10 +24,10 @@ class ChooseCommandTest extends TestCase
 
     public function test_an_empty_search_returns_every_available_command_name(): void
     {
-        $command = new class(new CommandInputPrompter()) extends ChooseCommand
+        $command = new class(new CommandInputPrompter) extends ChooseCommand
         {
             /**
-             * @param  \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
+             * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
              * @return array<int, string>
              */
             public function searchableNames(Collection $commands, string $query): array
@@ -36,7 +36,7 @@ class ChooseCommandTest extends TestCase
             }
 
             /**
-             * @param  \Illuminate\Support\Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
+             * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
              */
             public function infoFor(Collection $commands, ?string $name): ?string
             {
