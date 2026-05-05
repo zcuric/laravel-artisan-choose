@@ -10,7 +10,6 @@ Instead of remembering every Artisan command name, you can open an interactive c
 
 - Search visible Artisan commands by name, alias, or description
 - Browse the full command list by pressing `Enter` on an empty search box
-- See command description, aliases, and usage while moving through the list
 - Generate interactive forms for command arguments and options
 - Keep a raw arguments / options escape hatch for advanced cases
 - Keep normal Artisan behavior after selection, including nested prompts and console output
@@ -90,7 +89,6 @@ Admin/UserController --resource
 - The `choose` command does not list itself.
 - Command aliases are searchable.
 - Command descriptions are searchable.
-- Usage details are shown in the side information area while browsing.
 - `choose` generates prompts from the selected command's native Symfony input definition instead of prompting for Artisan's global flags.
 - Raw extra input is appended after the generated parameters, so it can handle edge cases or intentionally override prompted values.
 

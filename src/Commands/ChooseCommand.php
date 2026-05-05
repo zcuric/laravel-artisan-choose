@@ -48,7 +48,6 @@ class ChooseCommand extends Command
             placeholder: 'Type to filter commands...',
             options: fn (?string $value): array => $this->searchableCommandNames($commands, $value ?? ''),
             scroll: min(12, max(1, $commands->count())),
-            info: fn (?string $value): ?string => $value === null ? null : $this->commandInfo($commands, $value),
             hint: 'Press enter on an empty search box to browse the full list.',
         );
 
@@ -125,26 +124,6 @@ class ChooseCommand extends Command
             })
             ->pluck('name')
             ->all();
-    }
-
-    /**
-     * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
-     */
-    protected function commandInfo(Collection $commands, string $name): ?string
-    {
-        $command = $commands->firstWhere('name', $name);
-
-        if ($command === null) {
-            return null;
-        }
-
-        $details = array_filter([
-            $command['description'] !== '' ? $command['description'] : 'No description provided.',
-            $command['aliases'] !== [] ? 'Aliases: '.implode(', ', $command['aliases']) : null,
-            $command['synopsis'] !== '' ? 'Usage: php artisan '.$command['synopsis'] : null,
-        ]);
-
-        return implode(PHP_EOL, $details);
     }
 
     /**

@@ -10,6 +10,7 @@ use CastelCode\LaravelArtisanChoose\Tests\TestCase;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Collection;
+use Illuminate\Testing\PendingCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -33,14 +34,6 @@ class ChooseCommandTest extends TestCase
             public function searchableNames(Collection $commands, string $query): array
             {
                 return $this->searchableCommandNames($commands, $query);
-            }
-
-            /**
-             * @param  Collection<int, array{name: string, description: string, aliases: array<int, string>, synopsis: string}>  $commands
-             */
-            public function infoFor(Collection $commands, ?string $name): ?string
-            {
-                return $name === null ? null : $this->commandInfo($commands, $name);
             }
         };
 
@@ -69,12 +62,12 @@ class ChooseCommandTest extends TestCase
             ['demo:bundle', 'demo:greet', 'demo:hello'],
             $command->searchableNames($commands, '')
         );
-
-        $this->assertNull($command->infoFor($commands, null));
     }
 
     public function test_it_generates_prompts_for_required_arguments_and_flags(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:greet', 'person', [
                 'demo:greet',
@@ -88,6 +81,8 @@ class ChooseCommandTest extends TestCase
 
     public function test_it_can_find_commands_by_alias(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:hello', 'welcome', [
                 'demo:hello',
@@ -99,6 +94,8 @@ class ChooseCommandTest extends TestCase
 
     public function test_it_generates_forms_for_optional_values_and_negatable_options(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:configure', 'defaults', [
                 'demo:configure',
@@ -125,6 +122,8 @@ class ChooseCommandTest extends TestCase
 
     public function test_it_generates_prompts_for_array_arguments_and_options(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:bundle', 'bundle', [
                 'demo:bundle',
@@ -145,6 +144,8 @@ class ChooseCommandTest extends TestCase
 
     public function test_raw_input_can_override_generated_prompts_for_advanced_cases(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:greet', 'person', [
                 'demo:greet',
@@ -158,6 +159,8 @@ class ChooseCommandTest extends TestCase
 
     public function test_it_filters_out_hidden_commands_and_the_chooser_itself(): void
     {
+        $this->requireSearchAssertions();
+
         $this->artisan('choose')
             ->expectsSearch('Choose an Artisan command', 'demo:hello', 'demo:', [
                 'demo:bundle',
@@ -296,5 +299,12 @@ class ChooseCommandTest extends TestCase
                 return self::SUCCESS;
             }
         });
+    }
+
+    private function requireSearchAssertions(): void
+    {
+        if (! method_exists(PendingCommand::class, 'expectsSearch')) {
+            $this->markTestSkipped('Search prompt assertions are not available on this Laravel version.');
+        }
     }
 }
