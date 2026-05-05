@@ -4,6 +4,8 @@
 
 Instead of remembering every Artisan command name, you can open an interactive chooser, search by command name, alias, or description, inspect command details, and run the selected command immediately.
 
+<img width="643" height="320" alt="image" src="https://github.com/user-attachments/assets/e0e17895-684a-4b26-98e1-b4e31e6384ea" />
+
 ## Features
 
 - Search visible Artisan commands by name, alias, or description
