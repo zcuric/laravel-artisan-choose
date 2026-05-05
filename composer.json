@@ -1,0 +1,38 @@
+{
+    "name": "zdravko/laravel-artisan-choose",
+    "description": "Searchable Artisan command chooser inspired by just --choose.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "laravel/prompts": "^0.1.24|^0.2.0|^0.3.0|^0.4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.5|^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zdravko\\LaravelArtisanChoose\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zdravko\\LaravelArtisanChoose\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zdravko\\LaravelArtisanChoose\\ArtisanChooseServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
