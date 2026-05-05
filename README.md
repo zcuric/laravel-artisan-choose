@@ -4,7 +4,7 @@
 
 Instead of remembering every Artisan command name, you can open an interactive chooser, search by command name, alias, or description, inspect command details, and run the selected command immediately.
 
-<img width="643" height="320" alt="image" src="https://github.com/user-attachments/assets/e0e17895-684a-4b26-98e1-b4e31e6384ea" />
+https://github.com/user-attachments/assets/183dbce4-e960-4212-80f6-6e554fadb0ce
 
 ## Features
 
