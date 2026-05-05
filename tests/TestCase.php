@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Zdravko\LaravelArtisanChoose\Tests;
+namespace CastelCode\LaravelArtisanChoose\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Zdravko\LaravelArtisanChoose\ArtisanChooseServiceProvider;
+use CastelCode\LaravelArtisanChoose\ArtisanChooseServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zdravko\LaravelArtisanChoose\Commands;
+namespace CastelCode\LaravelArtisanChoose\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;

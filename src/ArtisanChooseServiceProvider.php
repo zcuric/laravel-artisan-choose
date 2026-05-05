@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Zdravko\LaravelArtisanChoose;
+namespace CastelCode\LaravelArtisanChoose;
 
 use Illuminate\Support\ServiceProvider;
-use Zdravko\LaravelArtisanChoose\Commands\ChooseCommand;
+use CastelCode\LaravelArtisanChoose\Commands\ChooseCommand;
 
 class ArtisanChooseServiceProvider extends ServiceProvider
 {

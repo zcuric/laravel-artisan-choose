@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Zdravko\LaravelArtisanChoose\Tests\Feature;
+namespace CastelCode\LaravelArtisanChoose\Tests\Feature;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Collection;
-use Zdravko\LaravelArtisanChoose\Commands\ChooseCommand;
-use Zdravko\LaravelArtisanChoose\Tests\TestCase;
+use CastelCode\LaravelArtisanChoose\Commands\ChooseCommand;
+use CastelCode\LaravelArtisanChoose\Tests\TestCase;
 
 class ChooseCommandTest extends TestCase
 {

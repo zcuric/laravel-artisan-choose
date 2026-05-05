@@ -15,18 +15,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Zdravko\\LaravelArtisanChoose\\": "src/"
+            "CastelCode\\LaravelArtisanChoose\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zdravko\\LaravelArtisanChoose\\Tests\\": "tests/"
+            "CastelCode\\LaravelArtisanChoose\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Zdravko\\LaravelArtisanChoose\\ArtisanChooseServiceProvider"
+                "CastelCode\\LaravelArtisanChoose\\ArtisanChooseServiceProvider"
             ]
         }
     },
